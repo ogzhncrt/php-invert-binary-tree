@@ -38,20 +38,20 @@
 
 	function invert_tree($root) {
 		$tmp_left  = $root->left_node; //store
-        $tmp_right = $root->right_node;
+		$tmp_right = $root->right_node;
 
-        $root->left_node  = $tmp_right;
-        $root->right_node = $tmp_left;
+		$root->left_node  = $tmp_right;
+		$root->right_node = $tmp_left;
 
-        if($root->left_node){
-            invert_tree($root->left_node);
-        }
-        
-        if($root->right_node){
-            invert_tree($root->right_node);
-        }
-        
-        return $root;
+		if($root->left_node){
+		    invert_tree($root->left_node);
+		}
+
+		if($root->right_node){
+		    invert_tree($root->right_node);
+		}
+
+		return $root;
 	}
 
 	
