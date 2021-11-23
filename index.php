@@ -32,15 +32,15 @@
 		Algorithm invert (tree)
    			1. Visit the root.
    			2. Swap left-side and right-side of the root
-   			2. invert the left subtree, i.e., call invert_tree(left_node)
-   			3. invert the right subtree, i.e., call invert_tree(right_node) 
+   			3. invert the left subtree, i.e., call invert_tree(left_node)
+   			4. invert the right subtree, i.e., call invert_tree(right_node) 
    */
 
 	function invert_tree($root) {
 		$tmp_left  = $root->left_node; //store
         $tmp_right = $root->right_node;
 
-        $root->left_node = $tmp_right;
+        $root->left_node  = $tmp_right;
         $root->right_node = $tmp_left;
 
         if($root->left_node){
@@ -59,7 +59,7 @@
 
 	$root = new tree_node(3);
 
-	$root->left_node = new tree_node(5);
+	$root->left_node  = new tree_node(5);
 	$root->right_node = new tree_node(6);
 
 	$root->right_node->left_node = new tree_node(7);
