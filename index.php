@@ -11,6 +11,32 @@
 	}
 
 	/*
+		Algorithm invert (tree)
+   			1. Visit the root.
+   			2. Swap left-side and right-side of the root
+   			3. invert the left subtree, i.e., call invert_tree(left_node)
+   			4. invert the right subtree, i.e., call invert_tree(right_node) 
+   */
+
+	function invert_tree($root) {
+		$tmp_left  = $root->left_node; //store
+		$tmp_right = $root->right_node;
+
+		$root->left_node  = $tmp_right;
+		$root->right_node = $tmp_left;
+
+		if($root->left_node){
+		    invert_tree($root->left_node);
+		}
+
+		if($root->right_node){
+		    invert_tree($root->right_node);
+		}
+
+		return $root;
+	}
+
+	/*
 		Algorithm Preorder(tree)
    			1. Visit the root.
    			2. Traverse the left subtree, i.e., call preorder_print(left_node)
@@ -43,33 +69,6 @@
 		echo $root->value."-";
 		
 		preorder_print($root->right_node);
-	}
-
-
-	/*
-		Algorithm invert (tree)
-   			1. Visit the root.
-   			2. Swap left-side and right-side of the root
-   			3. invert the left subtree, i.e., call invert_tree(left_node)
-   			4. invert the right subtree, i.e., call invert_tree(right_node) 
-   */
-
-	function invert_tree($root) {
-		$tmp_left  = $root->left_node; //store
-		$tmp_right = $root->right_node;
-
-		$root->left_node  = $tmp_right;
-		$root->right_node = $tmp_left;
-
-		if($root->left_node){
-		    invert_tree($root->left_node);
-		}
-
-		if($root->right_node){
-		    invert_tree($root->right_node);
-		}
-
-		return $root;
 	}
 
 	
