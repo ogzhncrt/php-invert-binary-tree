@@ -27,6 +27,24 @@
 		preorder_print($root->right_node);
 	}
 
+	/*
+		Algorithm Inorder(tree)
+			1. Traverse the left subtree, i.e., call inorder_print(left_node)
+   			2. Visit the root.
+   			3. Traverse the right subtree, i.e., call inorder_print(right_node) 
+   */
+
+	function inorder_print($root) {
+		if(!$root)
+			return;
+
+		preorder_print($root->left_node);
+
+		echo $root->value."-";
+		
+		preorder_print($root->right_node);
+	}
+
 
 	/*
 		Algorithm invert (tree)
