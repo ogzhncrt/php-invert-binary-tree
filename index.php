@@ -71,6 +71,23 @@
 		preorder_print($root->right_node);
 	}
 
+	/*
+		Algorithm Postorder(tree)
+			1. Traverse the left subtree, i.e., call inorder_print(left_node)
+   			2. Traverse the right subtree, i.e., call inorder_print(right_node) 
+   			3. Visit the root.
+   */
+
+	function postorder_print($root) {
+		if(!$root)
+			return;
+
+		preorder_print($root->left_node);
+		preorder_print($root->right_node);
+
+		echo $root->value."-";
+	}
+
 	
 	/* GENERATE SAMPLE - START */
 
